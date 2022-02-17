@@ -1,3 +1,4 @@
+const fs = require("fs")
 const path = require("path")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // Use this plugin to push backend code to servers like apache or nginx

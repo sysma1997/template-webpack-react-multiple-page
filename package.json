@@ -38,6 +38,5 @@
     "webpack-merge": "^5.8.0"
   },
   "repository": "git@github.com:sysma1997/porfolio.sysma1997.git",
-  "author": "Sebastian Moreno Acero <sysma1997@gmail.com>",
-  "main": "index.js"
+  "author": "Sebastian Moreno Acero <sysma1997@gmail.com>"
 }
