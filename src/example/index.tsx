@@ -1,10 +1,10 @@
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import * as React from "react"
 import { useState, useEffect } from "react"
-import * as ReactDOM from "react-dom"
+import * as ReactDOM from "react-dom/client"
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-
+document.title = "Example"
 
 const Example = () => {
     return <>
@@ -13,4 +13,5 @@ const Example = () => {
     </>
 }
 
-ReactDOM.render(<Example />, document.getElementById("root"))
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<Example />)
