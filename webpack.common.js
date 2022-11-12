@@ -1,5 +1,7 @@
 const path = require("path")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+
 // Use this plugin to push backend code to servers like apache or nginx
 // const CopyPlugin = require("copy-webpack-plugin")
 
@@ -20,7 +22,9 @@ module.exports = {
             filename: "example/index.html", 
             template: "./src/index.html", 
             chunks: ["./example/index"]
-        })
+        }), 
+
+        new MiniCssExtractPlugin()
     ], 
     output: {
         filename: "[name].[contenthash].js", 
@@ -54,8 +58,21 @@ module.exports = {
             }, 
             {
                 test: /\.css$/i, 
-                use: ["style-loader", "css-loader"]
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
             }, 
+            {
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader, 
+                    { loader: "css-loader" }, 
+                    {
+                        loader: "sass-loader", 
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.(png|jpg|jpeg|svg|gif)$/i, 
                 type: "asset/resource"
