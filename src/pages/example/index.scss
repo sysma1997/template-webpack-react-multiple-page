@@ -2,3 +2,7 @@
 @import "../shared/global.scss";
 
 @import "~bulma/sass/elements/tag.sass";
+
+h2 {
+    color: $colorGray;
+}
