@@ -7,20 +7,20 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
     entry: {
-        index: "./src/index.tsx", 
-        "./example/index": "./src/example/index.tsx"
+        index: "./src/pages/index.tsx", 
+        "./example/index": "./src/pages/example/index.tsx"
     }, 
     plugins: [
         new HtmlWebpackPlugin({
             title: "Home", 
             filename: "index.html", 
-            template: "./src/index.html", 
+            template: "./src/pages/index.html", 
             chunks: ["index"]
         }), 
         new HtmlWebpackPlugin({
             title: "Example", 
             filename: "example/index.html", 
-            template: "./src/index.html", 
+            template: "./src/pages/index.html", 
             chunks: ["./example/index"]
         }), 
 
