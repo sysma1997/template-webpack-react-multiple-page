@@ -1,0 +1,7 @@
+entry: {
+    // ...
+    "<root-page>": "<root-index.tsx>",
+    
+    // Example
+    "./example/index": "./src/pages/example/index.tsx"
+},

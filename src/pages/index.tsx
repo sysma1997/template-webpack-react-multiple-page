@@ -1,15 +1,27 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import ReactDOM from "react-dom/client"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import SyntaxHighlighter from "react-syntax-highlighter"
+import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 import { Footer } from "./shared/footer"
 
 import "./index.scss"
 
-document.title = "Home"
+document.title = "Template Webpack React multiple page"
 
 const App = () => {
+    const [entryCode, setEntryCode] = useState<any>()
+    const [pluginsCode, setPluginsCode] = useState<any>()
+
+    useEffect(() => {
+        fetch("assets/others/entry.txt").then(response => response.text())
+            .then((res: String) => setEntryCode(res))
+        fetch("assets/others/plugins.txt").then(response => response.text())
+            .then((res: String) => setPluginsCode(res))
+    }, [])
+
     return <>
         <header>
             <h1>Template for servers that only support static files</h1>
@@ -25,6 +37,33 @@ const App = () => {
                 <li><a href="https://bulma.io/" target="_blank">Bulma (css framework)</a></li>
                 <li><a href="https://www.typescriptlang.org/" target="_blank">Typescript</a></li>
             </ul>
+            <div className="use">
+                <p>How to use:</p>
+                <ul>
+                    <li>Install packages <code className="command">npm install</code>{' '}
+                        or <code className="command">yarn install</code></li>
+                    <li>Start development mode <code className="command">npm run start</code>{' '}
+                        or <code className="command">yarn start</code></li>
+                    <li>Start watch mode <code className="command">npm run watch</code>{' '}
+                        or <code className="command">yarn watch</code></li>
+                    <li>Build project with <code className="command">npm run build</code>{' '}
+                        or <code className="command">yarn build</code></li>
+                </ul>
+                <p>How to add page:</p>
+                <ul>
+                    <li>In your <code className="command">webpack.common.js</code> add
+                        in <code className="command">entry</code></li>
+                </ul>
+                <SyntaxHighlighter language="javascript" style={atomOneLight}>
+                    {entryCode}
+                </SyntaxHighlighter>
+                <ul>
+                    <li>Now in your <code className="command">plugins</code></li>
+                </ul>
+                <SyntaxHighlighter language="javascript" style={atomOneLight}>
+                    {pluginsCode}
+                </SyntaxHighlighter>
+            </div>
             <span className="tag is-large">
                 <a href="/example">
                     Go to page example

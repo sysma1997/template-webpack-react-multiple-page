@@ -1,0 +1,24 @@
+plugins: {
+    // ...
+    new HtmlWebpackPlugin({
+        title: "<title>",
+        filename: "<path-to-html>",
+        template: "<path-template-html>",
+        chunks: ["<path-html-without-extension>"]
+    }),
+
+    // Example
+    new HtmlWebpackPlugin({
+        title: "Example",
+        filename: "example/index.html",
+        template: "./src/pages/index.html",
+        chunks: ["example/index"]
+    }),
+    // Example with custom html template
+    new HtmlWebpackPlugin({
+        title: "Example",
+        filename: "example/index.html",
+        template: "./src/pages/example/index.html",
+        chunks: ["example/index"]
+    }),
+}

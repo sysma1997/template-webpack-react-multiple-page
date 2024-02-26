@@ -14,19 +14,17 @@ body {
 }
 
 .content {
-    color: darkgray;
+    color: #444;
     font-size: 1.3rem;
     padding: 1rem 15rem;
 
     ul {
         list-style: none;
     }
+
     a {
         color: gray;
         font-weight: bold;
-    }
-    span {
-        padding: 1rem;
     }
 
     @media screen and (max-width: 1024px) {
