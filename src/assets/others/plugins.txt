@@ -12,13 +12,13 @@ plugins: {
         title: "Example",
         filename: "example/index.html",
         template: "./src/pages/index.html",
-        chunks: ["example/index"]
+        chunks: ["./example/index"]
     }),
     // Example with custom html template
     new HtmlWebpackPlugin({
         title: "Example",
         filename: "example/index.html",
         template: "./src/pages/example/index.html",
-        chunks: ["example/index"]
+        chunks: ["./example/index"]
     }),
 }
