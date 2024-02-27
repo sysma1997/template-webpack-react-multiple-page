@@ -63,6 +63,9 @@ const App = () => {
                 <SyntaxHighlighter language="javascript" style={atomOneLight}>
                     {pluginsCode}
                 </SyntaxHighlighter>
+                <ul>
+                    <li>Now start server or restart <code className="command">npm run start</code></li>
+                </ul>
             </div>
             <span className="tag is-large">
                 <a href="/example">

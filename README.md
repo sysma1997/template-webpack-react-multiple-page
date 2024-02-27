@@ -59,3 +59,4 @@ This template is mainly for servers that only support static files or servers li
         }),
     }
     ```
+* Now start server or restart `npm run start`
