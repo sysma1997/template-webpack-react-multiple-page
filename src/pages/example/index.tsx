@@ -1,16 +1,33 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Footer } from "../shared/footer"
+import { Footer } from "../shared/footer";
 
-import "./index.scss"
+import "./index.css";
 
-document.title = "Example"
+import favicon from "../../assets/images/favicon.png";
+
+document.title = "Example";
 
 const Example = () => {
     return <>
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+            <div className="navbar-brand">
+                <a className="navbar-item" href="https://bulma.io" target="_blank">
+                    <img src={favicon} alt="Favicon" />
+                    <b>Your logo</b>
+                </a>
+
+                <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+        </nav>
         <div className="content">
             <h2>Example multiple page</h2>
             <p>
@@ -34,8 +51,8 @@ const Example = () => {
             </span>
         </div>
         <Footer />
-    </>
-}
+    </>;
+};
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<Example />)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Example />);

@@ -1,13 +1,14 @@
-@import "../global.scss";
+@import "../global.css";
 
 footer {
     background-color: whitesmoke;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    p {
-        color: $colorGray;
-    }
+}
+footer p {
+    color: var(--colorGray);
 }

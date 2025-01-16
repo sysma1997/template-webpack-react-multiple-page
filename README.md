@@ -7,7 +7,6 @@ This template is mainly for servers that only support static files or servers li
 * [Webpack](https://webpack.js.org/)
 * [React](https://react.dev/)
 * [Fontawesome](https://fontawesome.com/)
-* [Sass](https://sass-lang.com/)
 * [Bulma](https://bulma.io/)
 * [Typescript](https://www.typescriptlang.org/)
 

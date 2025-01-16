@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from "react"
-import ReactDOM from "react-dom/client"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
-import SyntaxHighlighter from "react-syntax-highlighter"
-import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs"
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-import { Footer } from "./shared/footer"
+import { Footer } from "./shared/footer";
 
-import "./index.scss"
+import "./index.css";
 
-document.title = "Template Webpack React multiple page"
+document.title = "Template Webpack React multiple page";
 
 const App = () => {
-    const [entryCode, setEntryCode] = useState<any>()
-    const [pluginsCode, setPluginsCode] = useState<any>()
+    const [entryCode, setEntryCode] = useState<any>();
+    const [pluginsCode, setPluginsCode] = useState<any>();
 
     useEffect(() => {
         fetch("assets/others/entry.txt").then(response => response.text())
-            .then((res: String) => setEntryCode(res))
+            .then((res: String) => setEntryCode(res));
         fetch("assets/others/plugins.txt").then(response => response.text())
-            .then((res: String) => setPluginsCode(res))
-    }, [])
+            .then((res: String) => setPluginsCode(res));
+    }, []);
 
     return <>
         <header>
@@ -33,7 +33,6 @@ const App = () => {
                 <li><a href="https://webpack.js.org/" target="_blank">Webpack</a></li>
                 <li><a href="https://reactjs.org/" target="_blank">React</a></li>
                 <li><a href="https://fontawesome.com/" target="_blank">Fontawesome</a></li>
-                <li><a href="https://sass-lang.com/" target="_blank">Sass</a></li>
                 <li><a href="https://bulma.io/" target="_blank">Bulma (css framework)</a></li>
                 <li><a href="https://www.typescriptlang.org/" target="_blank">Typescript</a></li>
             </ul>
@@ -67,7 +66,7 @@ const App = () => {
                     <li>Now start server or restart <code className="command">npm run start</code></li>
                 </ul>
             </div>
-            <span className="tag is-large">
+            <span className="tag is-large" style={{ marginTop: "1rem" }}>
                 <a href="/example">
                     Go to page example
                     {' '}
@@ -76,8 +75,8 @@ const App = () => {
             </span>
         </div>
         <Footer />
-    </>
-}
+    </>;
+};
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<App />)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);

@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 
-import "./index.scss"
+import "./index.css";
 
 export const Footer = () => {
     return <footer>
         <p>
             Created by <b>SYSMA</b>
         </p>
-    </footer>
-}
+    </footer>;
+};
